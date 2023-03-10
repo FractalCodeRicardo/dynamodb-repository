@@ -1,0 +1,11 @@
+aws dynamodb --endpoint-url http://localhost:1111 create-table \
+    --table-name Clients \
+    --attribute-definitions AttributeName=Key,AttributeType=S AttributeName=Name,AttributeType=S \
+    --key-schema AttributeName=Key,KeyType=HASH AttributeName=Name,KeyType=RANGE \
+    --provisioned-throughput \
+        ReadCapacityUnits=10,WriteCapacityUnits=5
+
+aws dynamodb --endpoint-url http://localhost:1111 get-item \
+    --table-name Clients 
+
+aws dynamodb scan --endpoint-url http://localhost:1111  --table-name Clients
