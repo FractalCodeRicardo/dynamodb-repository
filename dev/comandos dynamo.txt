@@ -9,3 +9,5 @@ aws dynamodb --endpoint-url http://localhost:1111 get-item \
     --table-name Clients 
 
 aws dynamodb scan --endpoint-url http://localhost:1111  --table-name Clients
+
+aws dynamodb --endpoint-url http://localhost:1111 list-tables
